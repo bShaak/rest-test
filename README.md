@@ -6,31 +6,31 @@
 
 If you don't already have Ruby and RubyGems installed.
 Install RVM the ruby version manager and install ruby version 2.2.3.
-'''shell
+```shell
     curl -L https://get.rvm.io | bash -s stable --ruby=2.2.3
-'''
+```
 
 At the end of installation log out and log back in. Then it will ask you to run the command
-"""shell
+```shell
     source ~/.rvm/scripts/rvm
-"""
+```
 
 ###Installing gems
 The test app depends on the Sinatra and Rest-Client
 
-"""shell
+```shell
     gem install sinatra --no-ri --no-rdoc
-"""
+```
 
-"""shell
+```shell
     gem install rest-client
-"""
+```
 
 ###Running the app
 Navigate to the base directory and run
-"""shell
+```shell
     ruby app.rb
-"""
+```
 
 Now open http://localhost:4567/ in your web browser. You should see a list of transactions and
 a total balance.
