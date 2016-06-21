@@ -29,7 +29,6 @@ get '/categories' do
   #create a hash that has Category key and array values
   @category_hash = Hash.new{|hash,key| hash[key] = []}
   transaction_array.each do |t|
-    #puts t.category
     @category_hash[t.category].push (t)
   end
 
