@@ -43,6 +43,7 @@ class BenchClient
     RestClient.get(page_url) {|response, request, result| response}
   end
 
+  #Adds all transactions from a JSON object to a TransactionArray
   def add_transactions(list, res)
     unless res.code == 404
       page_data = JSON.parse(res)
