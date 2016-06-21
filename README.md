@@ -32,8 +32,8 @@ Navigate to the base directory and run
     ruby app.rb
 ```
 
-Now open 
-http://localhost:4567
+Now open
+[http://localhost:4567](http://localhost:4567)
 in your web browser. You should see a list of transactions and
 a total balance.
 
