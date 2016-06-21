@@ -11,7 +11,7 @@ class BenchClient
     @num_pages = 0
   end
 
-  #takes TransactionArray and populates it with the transaction data
+  #Takes TransactionArray and populates it with the transaction data
   #This will also work with a regular Array type
   def populate_transaction_array(transaction_arr)
     res = get_page(1)
@@ -37,8 +37,7 @@ class BenchClient
 
   private
 
-  #Get page by the resource id
-  #Throws excpetion of the request fails
+  #Get page of transactions by the resource id
   def get_page(page_id)
     page_url = @base_url + "#{page_id}.json"
     RestClient.get(page_url) {|response, request, result| response}

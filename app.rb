@@ -2,14 +2,14 @@ require 'sinatra'
 require_relative 'bench-client'
 
 get '/' do
-  @client = BenchClient.new
+  client = BenchClient.new
   @transaction_array = TransactionArray.new
 
   #Get all transactions from rest api and
   #scrub the company descriptions of garbage that starts with '#' or 'xx'
-  @client.populate_transaction_array(@transaction_array)
+  client.populate_transaction_array(@transaction_array)
   @transaction_array.each do |transaction|
-    transaction.modify_company_name { |company| company.gsub(/(#\w+|xx*.*)/, '').strip }
+    transaction.modify_vendor_name { |vendor| vendor.gsub(/(#\w+|xx*.*)/, '').strip }
   end
 
   erb :index
@@ -23,7 +23,7 @@ get '/categories' do
   #scrub the company descriptions of garbage that starts with '#' or 'xx'
   client.populate_transaction_array(transaction_array)
   transaction_array.each do |transaction|
-    transaction.modify_company_name { |company| company.gsub(/(#\w+|xx*.*)/, '').strip }
+    transaction.modify_vendor_name { |vendor| vendor.gsub(/(#\w+|xx*.*)/, '').strip }
   end
 
   #create a hash that has Category key and array values
